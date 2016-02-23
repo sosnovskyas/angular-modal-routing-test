@@ -1,7 +1,7 @@
 {
-  "name": "angular-webpack-workflow",
+  "name": "angular-modal-routing-test",
   "version": "1.0.0",
-  "description": "A workflow for Angular made with Webpack",
+  "description": "Test quest",
   "scripts": {
     "build": "rimraf dist && webpack --bail --progress --profile",
     "server": "webpack-dev-server --history-api-fallback --inline --progress",
