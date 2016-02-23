@@ -19,5 +19,31 @@ module.exports = function (ngApp) {
                 url: "/modal",
                 template: require('./templates/pages/modal.html')
             })
+            .state('modal.modal1', {
+                url: "/modal1",
+                onEnter: ['$stateParams', '$state', '$uibModal', function ($stateParams, $state, $uibModal) {
+                    $uibModal
+                        // for open
+                        .open({
+                            template: require('./templates/pages/modal1.html'),
+                            controller: ['$scope', function ($scope, item) {
+                                $scope.ok = function () {
+                                    $scope.$dismiss();
+                                };
+
+                                $scope.save = function () {
+                                    item.update().then(function () {
+                                        $scope.$close(true);
+                                    });
+                                };
+                            }]
+                        })
+                        // after close
+                        .result.finally(function () {
+                            $state.go('^');
+                        });
+                }]
+            })
+        ;
     }
 };
