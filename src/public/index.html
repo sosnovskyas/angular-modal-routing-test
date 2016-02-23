@@ -1,13 +1,20 @@
 <!doctype html>
 <html ng-app="app" lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Angular App</title>
-  <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <meta charset="UTF-8">
+    <title>Angular App</title>
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
 
-  <base href="/">
+    <base href="/">
 </head>
 <body>
-  angular test = {{1 + 1 + 1}}
+<nav class="nav">
+    <button ui-sref="home">home</button>
+    <button ui-sref="modal">modal</button>
+</nav>
+<ui-view></ui-view>
+<test>
+    angular test = {{1 + 1 + 1}}
+</test>
 </body>
 </html>
